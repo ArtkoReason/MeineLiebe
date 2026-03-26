@@ -1,32 +1,109 @@
+/* Сброс */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Фон */
 body {
-    text-align: center;
-    font-family: Arial;
-    background: linear-gradient(to right, pink, purple);
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #a18cd1);
     color: white;
-    margin-top: 100px;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    padding: 20px;
 }
 
+/* Контент */
+.container {
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Заголовок */
 h1 {
-    font-size: 40px;
+    font-size: 8vw;
+    margin-bottom: 20px;
 }
 
+/* Текст */
 .message {
-    font-size: 20px;
-    margin: 20px;
+    font-size: 5vw;
+    margin-bottom: 25px;
+    line-height: 1.4;
 }
 
+/* Кнопка */
 button {
-    padding: 15px 30px;
-    font-size: 18px;
-    background: white;
-    color: black;
+    padding: 15px 25px;
+    font-size: 5vw;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
+    background: white;
+    color: #333;
     cursor: pointer;
+    transition: 0.3s;
+    width: 80%;
+    max-width: 280px;
 }
 
+button:hover {
+    transform: scale(1.1);
+    background: #ffe4e6;
+}
+
+/* Сюрприз */
 .hidden {
     display: none;
     margin-top: 20px;
-    font-size: 22px;
+    font-size: 5vw;
+}
+
+/* ПК версия */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    .message {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 18px;
+    }
+
+    .hidden {
+        font-size: 20px;
+    }
+}
+
+/* 💗 Сердечки */
+.hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    top: -10px;
+    color: #ff4d6d;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
 }
