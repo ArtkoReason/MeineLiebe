@@ -1,0 +1,32 @@
+body {
+    text-align: center;
+    font-family: Arial;
+    background: linear-gradient(to right, pink, purple);
+    color: white;
+    margin-top: 100px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+.message {
+    font-size: 20px;
+    margin: 20px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+    margin-top: 20px;
+    font-size: 22px;
+}
