@@ -2,25 +2,59 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>С Днём Рождения ❤️</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>💖 С Днём Рождения, Любимая 💖</h1>
+<div class="hearts"></div>
 
-<p class="message">
-Ты — самое лучшее, что случилось со мной ❤️  
-Спасибо тебе за всё, я тебя очень люблю 💕
-</p>
+<div class="container">
 
-<button onclick="showMessage()">Нажми сюда 🎁</button>
+    <h1>💖 С Днём Рождения, Любимая 💖</h1>
 
-<p id="hidden" class="hidden">
-Ты делаешь мою жизнь счастливее каждый день 💫  
-Я очень рад, что ты у меня есть ❤️
-</p>
+    <p class="message">
+        Ты — самое лучшее, что случилось со мной ❤️  
+        Спасибо тебе за всё, я тебя очень люблю 💕
+    </p>
 
-<script src="script.js"></script>
+    <button onclick="showSurprise()">Нажми сюда 🎁</button>
+
+    <div id="surprise" class="hidden">
+        <p>
+            Ты делаешь мою жизнь ярче каждый день ✨  
+            Я безумно счастлив, что ты у меня есть 💖  
+            С днём рождения тебя, моя любовь 💕
+        </p>
+    </div>
+
+</div>
+
+<script>
+function showSurprise() {
+    document.getElementById("surprise").style.display = "block";
+}
+
+/* 💗 Сердечки */
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💖";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+    heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+
+    document.querySelector(".hearts").appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
 </body>
 </html>
